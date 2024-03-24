@@ -1,0 +1,56 @@
+.dark-blue {
+    background-color: rgb(0, 0, 129) !important;
+}
+
+.blue {
+    background: linear-gradient(45deg, rgb(0, 0, 129), rgb(46, 46, 253)) !important;
+}
+
+.blue-l {
+    background: linear-gradient(45deg, rgb(46, 46, 253), rgb(80, 133, 255)) !important;
+}
+
+.green {
+    background: linear-gradient(45deg, rgb(0, 83, 128), rgb(3, 164, 118)) !important;
+}
+
+.red {
+    background: linear-gradient(45deg, rgb(107, 0, 21), red) !important;
+}
+
+.text-blue {
+    color: rgb(0, 0, 187);
+}
+
+.info-width {
+    max-width: 370px;
+    width: 90%;
+}
+
+.btn-width {
+    width: 100px;
+}
+
+.btn:hover {
+    transition: 300ms ease;
+    text-shadow: 0 0 5px #fff !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.fa-solid:hover {
+    transition: 300ms ease;
+    transform: scale(1.3);
+}
+
+.fade {
+    background-color: #00000080;
+}
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
