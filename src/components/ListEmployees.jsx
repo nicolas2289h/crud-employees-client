@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { BeatLoader } from 'react-spinners'
 import ModalViewEmployee from './ModalViewEmployee'
 
-const API_BASE_URL = 'https://open-bead-production.up.railway.app'
+const API_BASE_URL = 'https://tiresome-spade-production.up.railway.app'
 
 const ListEmployees = ({ employees, setEmployees }) => {
     const [employee, setEmployee] = useState({})
