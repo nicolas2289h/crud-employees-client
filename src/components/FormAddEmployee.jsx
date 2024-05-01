@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import NoUserImage from '../assets/images/no-user.jpg'
 
 import ModalNotification from './ModalNotification'
 
