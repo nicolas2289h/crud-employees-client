@@ -1,14 +1,17 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import NoUserImage from '../assets/images/no-user.jpg'
+
 import ModalNotification from './ModalNotification'
 
 const formValues = {
   firstName: '',
   lastName: '',
-  email: ''
+  email: '',
+  imagen: null
 }
-
+// https://tiresome-spade-production.up.railway.app
 const API_BASE_URL = 'https://tiresome-spade-production.up.railway.app'
 
 const FormNewEmployee = () => {
@@ -43,7 +46,18 @@ const FormNewEmployee = () => {
       errors.email = 'Email is required.';
     }
 
+    if (formData.imagen == null) {
+      errors.imagen = 'Image is required.';
+    }
+
     return errors;
+  }
+
+  const handleFileChange = (e) => {
+    setFormData({
+      ...formData,
+      imagen: e.target.files[0]
+    })
   }
 
   const handleSubmit = async (e) => {
@@ -56,13 +70,23 @@ const FormNewEmployee = () => {
       return
     }
 
+    const formDataToSend = new FormData()
+    formDataToSend.append('firstName', formData.firstName)
+    formDataToSend.append('lastName', formData.lastName)
+    formDataToSend.append('email', formData.email)
+    formDataToSend.append('imagen', formData.imagen);
+
+    console.log(formDataToSend)
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/employee`, formData)
-      // console.log('Server response: ', response.data)
+      const response = await axios.post(`${API_BASE_URL}/api/employee`, formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
       setFormData(formValues)
       navigator('/employees ')
     } catch (error) {
-      console.log(error.message)
+      console.log(error)
       setModalTitle('There was an error')
       setModalText('Error adding employee. Please try again.')
       setShowModal(true)
@@ -79,7 +103,7 @@ const FormNewEmployee = () => {
         <div className="">
           <h2 className='text-center'>Add Employee</h2>
           <div className="d-flex justify-content-center align-items-center">
-            <form className='form-control shadow info-width p-4' onSubmit={handleSubmit}>
+            <form className='form-control shadow info-width p-4' onSubmit={handleSubmit} encType="multipart/form-data">
               <div className="form-group mb-2">
                 <label className='form-label fw-bold' htmlFor="firstname">First Name <span className='text-danger fw-bold'>*</span></label>
                 <input onChange={handleChange} id='firstname' autoFocus type="text" placeholder='Enter First Name' name='firstName' className={`form-control ${error?.firstName && 'is-invalid'}`} value={formData.firstName} />
@@ -96,6 +120,12 @@ const FormNewEmployee = () => {
                 <label className='form-label fw-bold' htmlFor="email">Email <span className='text-danger fw-bold'>*</span></label>
                 <input onChange={handleChange} id='email' type="email" placeholder='Enter Email' name='email' className={`form-control ${error?.email && 'is-invalid'}`} value={formData.email} />
                 {error?.email && <p className='alert alert-danger p-1 mt-1 text-center'>{error.email}</p>}
+              </div>
+
+              <div className="form-group mb-2">
+                <label className='form-label fw-bold' htmlFor="imagen">Imagen de perfil:</label>
+                <input type="file" name="imagen" onChange={handleFileChange} />
+                {error?.imagen && <p className='alert alert-danger p-1 mt-1 text-center'>{error.imagen}</p>}
               </div>
 
               <div className='text-center mt-4'>
