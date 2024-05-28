@@ -9,7 +9,7 @@ const formValues = {
   email: ''
 }
 
-const API_BASE_URL = 'https://earnest-strength-production.up.railway.app/'
+const API_BASE_URL = 'https://earnest-strength-production.up.railway.app'
 
 const FormUpdateEmployee = () => {
   const [formData, setFormData] = useState(formValues)
