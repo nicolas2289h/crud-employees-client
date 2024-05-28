@@ -123,7 +123,7 @@ const FormNewEmployee = () => {
 
               <div className="form-group mb-2">
                 <label className='form-label fw-bold' htmlFor="imagen">Imagen de perfil:</label>
-                <input type="file" name="imagen" onChange={handleFileChange} />
+                <input className='w-100 border' type="file" name="imagen" onChange={handleFileChange} />
                 {error?.imagen && <p className='alert alert-danger p-1 mt-1 text-center'>{error.imagen}</p>}
               </div>
 
