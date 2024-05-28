@@ -11,7 +11,7 @@ const formValues = {
   imagen: null
 }
 // https://tiresome-spade-production.up.railway.app
-const API_BASE_URL = 'https://tiresome-spade-production.up.railway.app'
+const API_BASE_URL = 'https://earnest-strength-production.up.railway.app'
 
 const FormNewEmployee = () => {
   const [formData, setFormData] = useState(formValues)

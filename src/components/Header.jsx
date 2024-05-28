@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const API_BASE_URL = 'https://tiresome-spade-production.up.railway.app'
+const API_BASE_URL = 'https://earnest-strength-production.up.railway.app'
 
 const Header = ({ setEmployees }) => {
     const [name, setName] = useState('')
