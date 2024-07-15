@@ -1,5 +1,5 @@
-import React from 'react'
 import Modal from 'react-bootstrap/Modal'
+import ImageProfile from '../assets/images/profilepic.png'
 
 const ModalViewEmployee = (props) => {
 
@@ -26,8 +26,11 @@ const ModalViewEmployee = (props) => {
                     <p className='text-start'><span className='fw-bold'>Email:</span> {props.employee.email}</p>
                 </div>
                 <div className='border p-2 shadow'>
-                    <img width={130} src={`data:image/jpeg;base64,${props.employee.imagen}`} alt={`Img ${props.employee.firstName} ${props.employee.lastName}`} />
-                </div>
+                <img 
+                        width={130} 
+                        src={props.employee.imagen ? `data:image/jpeg;base64,${props.employee.imagen}` : ImageProfile} 
+                        alt={`Img ${props.employee.firstName} ${props.employee.lastName}`} 
+                    />                </div>
             </Modal.Body>
             <Modal.Footer></Modal.Footer>
         </Modal>

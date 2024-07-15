@@ -10,8 +10,7 @@ const formValues = {
   email: '',
   imagen: null
 }
-// https://tiresome-spade-production.up.railway.app
-const API_BASE_URL = 'https://earnest-strength-production.up.railway.app'
+const API_BASE_URL = import.meta.env.VITE_URL_BASE
 
 const FormNewEmployee = () => {
   const [formData, setFormData] = useState(formValues)

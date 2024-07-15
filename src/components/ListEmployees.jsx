@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { BeatLoader } from 'react-spinners'
 import ModalViewEmployee from './ModalViewEmployee'
 
-const API_BASE_URL = 'https://earnest-strength-production.up.railway.app'
+const API_BASE_URL = import.meta.env.VITE_URL_BASE
 
 const ListEmployees = ({ employees, setEmployees }) => {
     
@@ -17,7 +17,7 @@ const ListEmployees = ({ employees, setEmployees }) => {
         setLoading(true)
         axios.get(`${API_BASE_URL}/api/employees`)
             .then(datos => {
-                setEmployees(datos.data)
+                setEmployees([...employees, ...datos.data])
             })
             .catch(error => console.log(error.message))
             .finally(() => setLoading(false))
