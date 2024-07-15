@@ -6,16 +6,8 @@ import { Routes, Route } from 'react-router-dom'
 import FormUpdateEmployee from './components/FormUpdateEmployee'
 import { useState } from 'react'
 
-const preListEmployees = [
-  { id: 1, firstName: 'Nicolas', lastName: 'Huanca', email: 'nicolas@gmail.com' },
-  { id: 2, firstName: 'Laura', lastName: 'Molina', email: 'lauramol99@gmail.com' },
-  { id: 3, firstName: 'Francisco', lastName: 'Romero', email: 'fran23@gmail.com' },
-  { id: 4, firstName: 'Natalia', lastName: 'Gonzalez', email: 'ngonz@gmail.com' },
-]
-
-
 function App() {
-  const [employees, setEmployees] = useState(preListEmployees)
+  const [employees, setEmployees] = useState([])
 
   return (
     <div className=''>
