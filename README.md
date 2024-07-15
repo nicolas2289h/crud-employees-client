@@ -3,6 +3,7 @@
 This web application for an employee CRUD (Create, Read, Update, Delete) application. It provides RESTful APIs to manage employee data, including creating, retrieving, updating, and deleting employee records.
 
 [![Image 1](https://res.cloudinary.com/dd8pefa3c/image/upload/v1721077955/img-gestion-empleados_xybu38.png)](https://res.cloudinary.com/dd8pefa3c/image/upload/v1721077955/img-gestion-empleados_xybu38.png)
+[![Image 1](https://res.cloudinary.com/dd8pefa3c/image/upload/v1721086935/addemployee_wpnlcx.png)](https://res.cloudinary.com/dd8pefa3c/image/upload/v1721086935/addemployee_wpnlcx.png)
 
 ### Built With
 
@@ -31,3 +32,22 @@ Install NPM packages for frontend and run project
    ```sh
    npm run dev
    ```
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LINKS -->
+## Links
+
+Project Link: [https://nh-employees.vercel.app/](https://nh-employees.vercel.app/)
+
