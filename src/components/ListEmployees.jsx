@@ -21,7 +21,7 @@ const ListEmployees = ({ employees, setEmployees }) => {
             })
             .catch(error => console.log(error.message))
             .finally(() => setLoading(false))
-    }, [])
+    }, [employee])
 
     const addNewEmployee = () => {
         navigator('/add-employee')
