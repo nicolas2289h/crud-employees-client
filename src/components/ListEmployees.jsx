@@ -17,7 +17,7 @@ const ListEmployees = ({ employees, setEmployees }) => {
         setLoading(true)
         axios.get(`${API_BASE_URL}/api/employees`)
             .then(datos => {
-                setEmployees([...employees, ...datos.data])
+                setEmployees(datos.data)
             })
             .catch(error => console.log(error.message))
             .finally(() => setLoading(false))
